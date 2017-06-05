@@ -1,4 +1,4 @@
-# FirebaseUI for web - React Auth demo
+# FirebaseUI for web - StackOverflow Question
 
 ```
 npm install
