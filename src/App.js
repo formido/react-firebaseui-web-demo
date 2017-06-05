@@ -51,6 +51,20 @@ class App extends Component {
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const ref = firebase.database().ref("/44358340");
+        if (user) {
+          const timestamp = firebase.database.ServerValue.TIMESTAMP;
+          ref.set(timestamp).then((error) => {
+            if (error) {
+              console.error(error);
+            }
+            else {
+              console.log('Timestamp written');
+            }
+          });
+        }
+      }
       this.setState({loading: false, user});
     });
   }
